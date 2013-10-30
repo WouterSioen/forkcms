@@ -797,6 +797,30 @@ class BackendFormFile extends SpoonFormFile
 class BackendFormSirTrevor extends SpoonFormTextarea
 {
 	/**
+	 * Class constructor.
+	 *
+	 * @param	string $name					The name.
+	 * @param	string[optional] $value			The initial value.
+	 * @param	string[optional] $class			The CSS-class to be used.
+	 * @param	string[optional] $classError	The CSS-class to be used when there is an error.
+	 * @param	bool[optional] $HTML			Is HTML allowed?
+	 */
+	public function __construct($name, $value = null, $class = 'inputTextarea', $classError = 'inputTextareaError', $HTML = false)
+	{
+		// obligated fields
+		$this->attributes['id'] = SpoonFilter::toCamelCase($name, '_', true);
+		$this->attributes['name'] = (string) $name;
+
+		// custom optional fields
+		if($value !== null) $this->setValue($value);
+		$this->attributes['cols'] = 62;
+		$this->attributes['rows'] = 5;
+		$this->attributes['class'] = $class;
+		$this->classError = (string) $classError;
+		$this->isHTML = (bool) $HTML;
+	}
+
+	/**
 	 * Retrieve the value converted to html
 	 *
 	 * @return	string
@@ -866,5 +890,67 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 		}
 
 		return $value;
+	}
+
+	/**
+	 * Set the value of Sir Trevor.
+	 *
+	 * @param string $value
+	 */
+	private function setValue($value)
+	{
+		// convert the html to json
+		$data = array();
+
+		$doc = new DOMDocument();
+		$doc->loadHTML($value);
+
+		// go into the first element of nodeType 1. This is the first element
+		// after the doctype declaration, so the html tag
+		foreach($doc->childNodes as $wrapperNode)
+		{
+			if($wrapperNode->nodeType == 1)
+			{
+				// we're in he html, let's get into the body tag
+				foreach($wrapperNode->childNodes as $bodyNode)
+				{
+					if($bodyNode->nodeName == 'body')
+					{
+						// and now, we can loop our nodes, eventually. Let's convert
+						foreach($bodyNode->childNodes as $node)
+						{
+							switch($node->nodeName)
+							{
+								case 'p':
+									$markdown = new HTML_To_Markdown($node->textContent);
+									$markdown = $markdown->output();
+									$data[] = array(
+										'type' => 'text',
+										'data' => array(
+											'text' => $markdown
+										)
+									);
+									break;
+								case 'h2':
+									$markdown = new HTML_To_Markdown($node->textContent);
+									$markdown = $markdown->output();
+									$data[] = array(
+										'type' => 'heading',
+										'data' => array(
+											'text' => $markdown
+										)
+									);
+									break;
+								default:
+									break;
+							}
+						}
+					}
+					
+				}
+			}
+		}
+
+		$this->value = json_encode(array('data' =>$data));
 	}
 }

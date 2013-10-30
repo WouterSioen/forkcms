@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cb513bbb912c70cd1a146b11a1234637",
+    "hash": "40381f3c5e7378255cddfbe97ed5e531",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -199,6 +199,52 @@
                 "psr-3"
             ],
             "time": "2013-04-23 10:09:48"
+        },
+        {
+            "name": "nickcernis/html-to-markdown",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nickcernis/html-to-markdown.git",
+                "reference": "e7671ed28208f4b262b7b2bfc2e7223408ca894e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nickcernis/html-to-markdown/zipball/e7671ed28208f4b262b7b2bfc2e7223408ca894e",
+                "reference": "e7671ed28208f4b262b7b2bfc2e7223408ca894e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "php": ">=5.3.3",
+                "phpunit/phpunit": "3.7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "HTML_To_Markdown.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Cernis",
+                    "email": "nick@cern.is",
+                    "homepage": "http://modernnerd.net"
+                }
+            ],
+            "description": "An HTML-to-markdown conversion helper for PHP",
+            "homepage": "https://github.com/nickcernis/html-to-markdown",
+            "keywords": [
+                "html",
+                "markdown"
+            ],
+            "time": "2013-10-19 17:48:44"
         },
         {
             "name": "psr/log",
@@ -939,7 +985,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "michelf/php-markdown": 20
+        "michelf/php-markdown": 20,
+        "nickcernis/html-to-markdown": 20
     },
     "platform": {
         "php": ">=5.3.2"
