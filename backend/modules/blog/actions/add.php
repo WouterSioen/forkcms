@@ -59,7 +59,7 @@ class BackendBlogAdd extends BackendBaseActionAdd
 
 		// create elements
 		$this->frm->addText('title', null, null, 'inputText title', 'inputTextError title');
-		$this->frm->addSirTrevor('text', '<h2>This is a heading</h2><p>Let\'s add a paragraph.</p>');
+		$this->frm->addEditor('text');
 		$this->frm->addEditor('introduction');
 		$this->frm->addRadiobutton('hidden', $rbtHiddenValues, 'N');
 		$this->frm->addCheckbox('allow_comments', BackendModel::getModuleSetting($this->getModule(), 'allow_comments', false));
