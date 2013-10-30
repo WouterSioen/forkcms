@@ -9,6 +9,7 @@
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOException;
+use \Michelf\Markdown;
 
 /**
  * This is our extended version of SpoonForm
@@ -392,7 +393,7 @@ class BackendForm extends SpoonForm
 		}*/
 
 		// create and return a textarea for the editor
-		return $this->addTextArea($name, $value, $class, $classError, $HTML);
+		return $this->add(new BackendFormSirTrevor($name, $value, $class, $classError, $HTML));
 	}
 
 	/**
@@ -785,5 +786,85 @@ class BackendFormFile extends SpoonFormFile
 		}
 
 		return $output;
+	}
+}
+
+/**
+ * This is our extended version of SpoonFormTextarea
+ *
+ * @author Wouter Sioen <wouter.sioen@wijs>
+ */
+class BackendFormSirTrevor extends SpoonFormTextarea
+{
+	/**
+	 * Retrieve the value converted to html
+	 *
+	 * @return	string
+	 */
+	public function getHTML()
+	{
+		$value = $this->value;
+
+		// form submitted
+		if($this->isSubmitted())
+		{
+			// post/get data
+			$data = $this->getMethod(true);
+
+			// submitted by post (may be empty)
+			if(isset($data[$this->getName()]))
+			{
+				// value
+				$value = isset($data[$this->getName()]) ? $data[$this->getName()] : '';
+				$html = '';
+
+				// decode the json en loop the blocks to convert them to html
+				$json = json_decode($value);
+				foreach($json->data as $block)
+				{
+					switch($block->type)
+					{
+						case 'heading':
+							// Add Two hashes before the item. => H2
+							$text = '## ' . $block->data->text;
+							$html .= Markdown::defaultTransform($text);
+							break;
+						case 'video':
+							if($block->data->source == 'youtube')
+							{
+								// create the youtube embed link
+								$html .= '<iframe class="youtube" src="//www.youtube.com/embed/';
+								$html .= $block->data->remote_id;
+								$html .= '" frameborder="0" allowfullscreen></iframe>';
+							}
+							break;
+						case 'embedly':
+							$html .= $block->data->html;
+							break;
+						case 'quote':
+							$html .= '<blockquote>';
+							$html .= Markdown::defaultTransform($block->data->text);
+
+							// Add the cit if necessary
+							if(!empty($block->data->city))
+							{
+								$html .= '<cite>';
+								$html .= Markdown::defaultTransform($block->data->text);
+								$html .= '</city>';
+							}
+
+							$html .= '</blockquote>';
+							break;
+						default:
+							$html .= Markdown::defaultTransform($block->data->text);
+							break;
+					}
+				}
+
+				$value = $html;
+			}
+		}
+
+		return $value;
 	}
 }

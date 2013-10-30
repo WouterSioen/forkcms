@@ -2096,7 +2096,10 @@ jsBackend.sirTrevor =
 	// init, something like a constructor
 	init: function()
 	{
-		new SirTrevor.Editor({ el: $('.inputSirTrevor') });
+		if(typeof SirTrevor != 'undefined')
+		{
+			new SirTrevor.Editor({ el: $('.inputSirTrevor') });
+		}
 	}
 }
 
