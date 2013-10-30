@@ -922,7 +922,8 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 							switch($node->nodeName)
 							{
 								case 'p':
-									$markdown = new HTML_To_Markdown($node->textContent);
+									$html = $node->ownerDocument->saveXML($node);
+									$markdown = new HTML_To_Markdown($html);
 									$markdown = $markdown->output();
 									$data[] = array(
 										'type' => 'text',
@@ -932,10 +933,26 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 									);
 									break;
 								case 'h2':
-									$markdown = new HTML_To_Markdown($node->textContent);
+									$html = $node->ownerDocument->saveXML($node);
+									$markdown = new HTML_To_Markdown($html);
 									$markdown = $markdown->output();
 									$data[] = array(
 										'type' => 'heading',
+										'data' => array(
+											'text' => $markdown
+										)
+									);
+									break;
+								case 'ul':
+									$html = $node->ownerDocument->saveXML($node);
+									$markdown = new HTML_To_Markdown($html);
+									$markdown = $markdown->output();
+
+									// we need a space in the beginnen of each line
+									$markdown =  ' ' . str_replace("\n", "\n ", $markdown);
+
+									$data[] = array(
+										'type' => 'list',
 										'data' => array(
 											'text' => $markdown
 										)
