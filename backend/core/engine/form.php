@@ -834,7 +834,7 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 		{
 			// post/get data
 			$data = $this->getMethod(true);
-
+Spoon::dump($data);
 			// submitted by post (may be empty)
 			if(isset($data[$this->getName()]))
 			{
@@ -896,6 +896,7 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 	 * Set the value of Sir Trevor.
 	 *
 	 * @param string $value
+	 * @todo Fix inline styles (waiting on a pull request https://github.com/nickcernis/html-to-markdown/pull/8)
 	 */
 	private function setValue($value)
 	{
@@ -934,8 +935,12 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 									break;
 								case 'h2':
 									$html = $node->ownerDocument->saveXML($node);
+
+									// remove the outer h2 tags
+									$html = preg_replace('/<(\/|)h2>/i', '', $html);
 									$markdown = new HTML_To_Markdown($html);
-									$markdown = $markdown->output();
+									$markdown = ' ' . $markdown->output();
+
 									$data[] = array(
 										'type' => 'heading',
 										'data' => array(
