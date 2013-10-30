@@ -823,7 +823,7 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 	/**
 	 * Retrieve the value converted to html
 	 *
-	 * @return	string
+	 * @return string
 	 */
 	public function getHTML()
 	{
@@ -949,7 +949,7 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 									$markdown = $markdown->output();
 
 									// we need a space in the beginnen of each line
-									$markdown =  ' ' . str_replace("\n", "\n ", $markdown);
+									$markdown = ' ' . str_replace("\n", "\n ", $markdown);
 
 									$data[] = array(
 										'type' => 'list',
@@ -968,6 +968,6 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 			}
 		}
 
-		$this->value = json_encode(array('data' =>$data));
+		$this->value = json_encode(array('data' => $data));
 	}
 }
