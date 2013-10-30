@@ -46,6 +46,7 @@ var jsBackend =
 		jsBackend.tooltip.init();
 		jsBackend.tableSequenceByDragAndDrop.init();
 		jsBackend.ckeditor.init();
+		jsBackend.sirTrevor.init();
 
 		// IE fixes
 		jsBackend.selectors.init();
@@ -2082,6 +2083,20 @@ jsBackend.tableSequenceByDragAndDrop =
 				}
 			});
 		}
+	}
+}
+
+/**
+ * Enable Sir Trevor editors
+ *
+ * @author	Wouter Sioen <wouter.sioen@wijs.be>
+ */
+jsBackend.sirTrevor =
+{
+	// init, something like a constructor
+	init: function()
+	{
+		new SirTrevor.Editor({ el: $('.inputSirTrevor') });
 	}
 }
 

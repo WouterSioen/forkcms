@@ -358,6 +358,44 @@ class BackendForm extends SpoonForm
 	}
 
 	/**
+	 * Add a sir trevor field
+	 *
+	 * @param string $name The name of the element.
+	 * @param string[optional] $value The value inside the element.
+	 * @param string[optional] $class Class(es) that will be applied on the element.
+	 * @param string[optional] $classError Class(es) that will be applied on the element when an error occurs.
+	 * @param bool[optional] $HTML Will the field contain HTML?
+	 * @return SpoonFormTextarea
+	 */
+	public function addSirTrevor($name, $value = null, $class = null, $classError = null, $HTML = true)
+	{
+		$name = (string) $name;
+		$value = ($value !== null) ? (string) $value : null;
+		$class = 'inputSirTrevor ' . (string) $class;
+		$classError = 'inputSirTrevorError ' . (string) $classError;
+		$HTML = (bool) $HTML;
+
+		// we add JS because we need Sir trevor
+		$this->header->addJS('sir_trevor/underscore-min.js', 'core', false);
+		$this->header->addJS('sir_trevor/eventable.js', 'core', false);
+		$this->header->addJS('sir_trevor/sir-trevor.min.js', 'core', false);
+
+		// add needed css files
+		$this->header->addCSS('sir_trevor/sir-trevor.css', 'core', false);
+		$this->header->addCSS('sir_trevor/sir-trevor-icons.css', 'core', false);
+
+		// add the internal link lists-file
+		/*if(is_file(FRONTEND_CACHE_PATH . '/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js'))
+		{
+			$timestamp = @filemtime(FRONTEND_CACHE_PATH . '/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js');
+			$this->header->addJS('/frontend/cache/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js?m=' . $timestamp, null, false, true, false);
+		}*/
+
+		// create and return a textarea for the editor
+		return $this->addTextArea($name, $value, $class, $classError, $HTML);
+	}
+
+	/**
 	 * Adds a single textfield.
 	 *
 	 * @param string $name The name of the element.
