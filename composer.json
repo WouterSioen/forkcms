@@ -18,8 +18,7 @@
         "symfony/finder": "2.3.*",
         "spoon/library": "1.3.*",
         "symfony/monolog-bundle": "2.3.*",
-        "michelf/php-markdown": "1.3.*@dev",
-        "nickcernis/html-to-markdown": "dev-master"
+        "woutersioen/sir-trevor-php": "dev-master@dev"
     },
     "support": {
         "irc": "irc://irc.freenode.org/forkcms",

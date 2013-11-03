@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "40381f3c5e7378255cddfbe97ed5e531",
+    "hash": "390db8d54859c9e06fd4269e5f9637d0",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "v3.2.2"
+                "reference": "bf99924386be074da30a8e9d6bbcb49d3333da12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/v3.2.2",
-                "reference": "v3.2.2",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/bf99924386be074da30a8e9d6bbcb49d3333da12",
+                "reference": "bf99924386be074da30a8e9d6bbcb49d3333da12",
                 "shasum": ""
             },
             "require": {
@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "1.1.2"
+                "reference": "1cd2718da4be06e487e526f8ea95f71e542a68cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/1.1.2",
-                "reference": "1.1.2",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/1cd2718da4be06e487e526f8ea95f71e542a68cd",
+                "reference": "1cd2718da4be06e487e526f8ea95f71e542a68cd",
                 "shasum": ""
             },
             "require": {
@@ -85,20 +85,20 @@
             ],
             "description": "CSS & JS minifier",
             "homepage": "https://github.com/matthiasmullie/minify",
-            "time": "2013-04-22 08:16:03"
+            "time": "2013-04-22 08:19:35"
         },
         {
             "name": "michelf/php-markdown",
-            "version": "dev-lib",
+            "version": "1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "9dbd8352deac7d3a00ba9e2360b0d9f1c31b4b4c"
+                "reference": "fcdd3e0781ae40c2b9847874e0755ff4f5559688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/9dbd8352deac7d3a00ba9e2360b0d9f1c31b4b4c",
-                "reference": "9dbd8352deac7d3a00ba9e2360b0d9f1c31b4b4c",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/fcdd3e0781ae40c2b9847874e0755ff4f5559688",
+                "reference": "fcdd3e0781ae40c2b9847874e0755ff4f5559688",
                 "shasum": ""
             },
             "require": {
@@ -136,30 +136,30 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2013-08-02 10:50:14"
+            "time": "2013-04-11 18:53:11"
         },
         {
             "name": "monolog/monolog",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1.5.0"
+                "reference": "f72392d0e6eb855118f5a84e89ac2d257c704abd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1.5.0",
-                "reference": "1.5.0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f72392d0e6eb855118f5a84e89ac2d257c704abd",
+                "reference": "f72392d0e6eb855118f5a84e89ac2d257c704abd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "psr/log": ">=1.0,<2.0"
+                "psr/log": "~1.0"
             },
             "require-dev": {
                 "doctrine/couchdb": "dev-master",
                 "mlehner/gelf-php": "1.0.*",
-                "raven/raven": "0.3.*"
+                "raven/raven": "0.5.*"
             },
             "suggest": {
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
@@ -171,7 +171,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -198,20 +198,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-04-23 10:09:48"
+            "time": "2013-07-28 22:38:30"
         },
         {
             "name": "nickcernis/html-to-markdown",
-            "version": "dev-master",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nickcernis/html-to-markdown.git",
-                "reference": "e7671ed28208f4b262b7b2bfc2e7223408ca894e"
+                "reference": "4e8f36f2eccc3f14bb9ba511b0010d70926a2917"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nickcernis/html-to-markdown/zipball/e7671ed28208f4b262b7b2bfc2e7223408ca894e",
-                "reference": "e7671ed28208f4b262b7b2bfc2e7223408ca894e",
+                "url": "https://api.github.com/repos/nickcernis/html-to-markdown/zipball/4e8f36f2eccc3f14bb9ba511b0010d70926a2917",
+                "reference": "4e8f36f2eccc3f14bb9ba511b0010d70926a2917",
                 "shasum": ""
             },
             "require": {
@@ -244,20 +244,20 @@
                 "html",
                 "markdown"
             ],
-            "time": "2013-10-19 17:48:44"
+            "time": "2013-11-02 11:38:45"
         },
         {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-fig/log",
-                "reference": "1.0.0"
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/php-fig/log/archive/1.0.0.zip",
-                "reference": "1.0.0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "shasum": ""
             },
             "type": "library",
@@ -290,12 +290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/forkcms/library.git",
-                "reference": "1.3.10"
+                "reference": "394a4392db9c93c2f49a8923982a6a6de7035688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/forkcms/library/zipball/1.3.10",
-                "reference": "1.3.10",
+                "url": "https://api.github.com/repos/forkcms/library/zipball/394a4392db9c93c2f49a8923982a6a6de7035688",
+                "reference": "394a4392db9c93c2f49a8923982a6a6de7035688",
                 "shasum": ""
             },
             "require": {
@@ -318,22 +318,22 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/Config",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "v2.3.1"
+                "reference": "1ced3d6c88b22df8cd1fe5209dbd6a89df362a29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/1ced3d6c88b22df8cd1fe5209dbd6a89df362a29",
+                "reference": "1ced3d6c88b22df8cd1fe5209dbd6a89df362a29",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/filesystem": ">=2.3,<3.0"
+                "symfony/filesystem": "~2.3"
             },
             "type": "library",
             "extra": {
@@ -362,29 +362,29 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-03 00:18:25"
+            "time": "2013-09-19 09:45:20"
         },
         {
             "name": "symfony/debug",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/Debug",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "v2.3.1"
+                "reference": "7f671456b9617d0a54f04597ae1c1ed3a1e858fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/7f671456b9617d0a54f04597ae1c1ed3a1e858fd",
+                "reference": "7f671456b9617d0a54f04597ae1c1ed3a1e858fd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/http-foundation": ">=2.1,<3.0",
-                "symfony/http-kernel": ">=2.1,<3.0"
+                "symfony/http-foundation": "~2.1",
+                "symfony/http-kernel": "~2.1"
             },
             "suggest": {
                 "symfony/class-loader": "",
@@ -418,29 +418,29 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-02 11:58:44"
+            "time": "2013-09-19 09:47:13"
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/DependencyInjection",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DependencyInjection.git",
-                "reference": "v2.3.1"
+                "reference": "81620c3551d411b0f7ec3bd6e978000569ec004a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/81620c3551d411b0f7ec3bd6e978000569ec004a",
+                "reference": "81620c3551d411b0f7ec3bd6e978000569ec004a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/config": ">=2.2,<3.0",
-                "symfony/yaml": ">=2.0,<3.0"
+                "symfony/config": "~2.2",
+                "symfony/yaml": "~2.0"
             },
             "suggest": {
                 "symfony/config": "",
@@ -474,28 +474,28 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-05 09:51:05"
+            "time": "2013-09-26 22:39:53"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "v2.3.1"
+                "reference": "7fc72a7a346a1887d3968cc1ce5642a15cd182e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/7fc72a7a346a1887d3968cc1ce5642a15cd182e9",
+                "reference": "7fc72a7a346a1887d3968cc1ce5642a15cd182e9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/dependency-injection": ">=2.0,<3.0"
+                "symfony/dependency-injection": "~2.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -528,21 +528,21 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-13 14:36:40"
+            "time": "2013-09-19 09:45:20"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "v2.3.1"
+                "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/2b8995042086c5552c94d33b5553c492e9cfc00e",
+                "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e",
                 "shasum": ""
             },
             "require": {
@@ -575,21 +575,21 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-04 15:02:05"
+            "time": "2013-09-19 09:45:20"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "v2.3.1"
+                "reference": "a175521f680b178e63c5d0ab87c6b046c0990c3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/a175521f680b178e63c5d0ab87c6b046c0990c3f",
+                "reference": "a175521f680b178e63c5d0ab87c6b046c0990c3f",
                 "shasum": ""
             },
             "require": {
@@ -622,21 +622,21 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-02 12:05:51"
+            "time": "2013-09-19 09:45:20"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "v2.3.1"
+                "reference": "59e712338cd05463ebcb8da6422a01b1291871e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/59e712338cd05463ebcb8da6422a01b1291871e3",
+                "reference": "59e712338cd05463ebcb8da6422a01b1291871e3",
                 "shasum": ""
             },
             "require": {
@@ -672,40 +672,41 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-10 06:00:03"
+            "time": "2013-09-29 19:41:41"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "v2.3.1"
+                "reference": "9ace7b963fa6d2eae8471c246e6fabc2ef714566"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/9ace7b963fa6d2eae8471c246e6fabc2ef714566",
+                "reference": "9ace7b963fa6d2eae8471c246e6fabc2ef714566",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "psr/log": ">=1.0,<2.0",
-                "symfony/debug": ">=2.3,<3.0",
-                "symfony/event-dispatcher": ">=2.1,<3.0",
-                "symfony/http-foundation": ">=2.2,<3.0"
+                "psr/log": "~1.0",
+                "symfony/debug": "~2.3",
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/http-foundation": "~2.2"
             },
             "require-dev": {
-                "symfony/browser-kit": "2.2.*",
-                "symfony/class-loader": ">=2.1,<3.0",
-                "symfony/config": ">=2.0,<3.0",
-                "symfony/console": "2.2.*",
-                "symfony/dependency-injection": ">=2.0,<3.0",
-                "symfony/finder": ">=2.0,<3.0",
-                "symfony/process": ">=2.0,<3.0",
-                "symfony/routing": ">=2.2,<3.0",
-                "symfony/stopwatch": ">=2.2,<3.0"
+                "symfony/browser-kit": "~2.2",
+                "symfony/class-loader": "~2.1",
+                "symfony/config": "~2.0",
+                "symfony/console": "~2.2",
+                "symfony/dependency-injection": "~2.0",
+                "symfony/finder": "~2.0",
+                "symfony/process": "~2.0",
+                "symfony/routing": "~2.2",
+                "symfony/stopwatch": "~2.2",
+                "symfony/templating": "~2.2"
             },
             "suggest": {
                 "symfony/browser-kit": "",
@@ -742,27 +743,27 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-11 11:46:38"
+            "time": "2013-10-10 13:24:22"
         },
         {
             "name": "symfony/monolog-bridge",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Bridge/Monolog",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBridge.git",
-                "reference": "v2.3.1"
+                "reference": "1635aa775bdb98c92604564a88b77aaff80c31ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBridge/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/MonologBridge/zipball/1635aa775bdb98c92604564a88b77aaff80c31ec",
+                "reference": "1635aa775bdb98c92604564a88b77aaff80c31ec",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": ">=1.3,<2.0",
+                "monolog/monolog": "~1.3",
                 "php": ">=5.3.3",
-                "symfony/http-kernel": ">=2.2,<3.0"
+                "symfony/http-kernel": "~2.2"
             },
             "type": "symfony-bridge",
             "extra": {
@@ -791,7 +792,7 @@
             ],
             "description": "Symfony Monolog Bridge",
             "homepage": "http://symfony.com",
-            "time": "2013-05-24 13:05:33"
+            "time": "2013-09-19 09:45:20"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -800,23 +801,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBundle.git",
-                "reference": "v2.3.0"
+                "reference": "03ed73bc11367b3156cc21f22ac37c7f70fcd10a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.3.0",
-                "reference": "v2.3.0",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/03ed73bc11367b3156cc21f22ac37c7f70fcd10a",
+                "reference": "03ed73bc11367b3156cc21f22ac37c7f70fcd10a",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": ">=1.3,<2.0",
+                "monolog/monolog": "~1.3",
                 "php": ">=5.3.2",
-                "symfony/config": ">=2.2-beta2,<3.0",
-                "symfony/dependency-injection": ">=2.2-beta2,<3.0",
-                "symfony/monolog-bridge": ">=2.2-beta2,<3.0"
+                "symfony/config": "~2.2-beta2",
+                "symfony/dependency-injection": "~2.2-beta2",
+                "symfony/monolog-bridge": "~2.2-beta2"
             },
             "require-dev": {
-                "symfony/yaml": ">=2.2-beta2,<3.0"
+                "symfony/yaml": "~2.2-beta2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -853,17 +854,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.3.1",
+            "version": "v2.3.6",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "v2.3.1"
+                "reference": "6bb881b948368482e1abf1a75c08bcf88a1c5fc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/6bb881b948368482e1abf1a75c08bcf88a1c5fc3",
+                "reference": "6bb881b948368482e1abf1a75c08bcf88a1c5fc3",
                 "shasum": ""
             },
             "require": {
@@ -896,20 +897,20 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-10 18:12:13"
+            "time": "2013-09-22 18:04:39"
         },
         {
             "name": "tijsverkoyen/akismet",
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tijsverkoyen/Akismet",
-                "reference": "1.1.0"
+                "url": "https://github.com/tijsverkoyen/Akismet.git",
+                "reference": "0c5185956e11824ed310d134d38d0b2c936f3d3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/tijsverkoyen/Akismet/zipball/1.1.0",
-                "reference": "1.1.0",
+                "url": "https://api.github.com/repos/tijsverkoyen/Akismet/zipball/0c5185956e11824ed310d134d38d0b2c936f3d3a",
+                "reference": "0c5185956e11824ed310d134d38d0b2c936f3d3a",
                 "shasum": ""
             },
             "require": {
@@ -935,7 +936,7 @@
             ],
             "description": "Akismet is a wrapper-class to communicate with the Akismet API.",
             "homepage": "https://github.com/tijsverkoyen/Akismet",
-            "time": "2012-10-13 10:59:41"
+            "time": "2012-10-13 17:59:41"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -943,13 +944,13 @@
             "target-dir": "TijsVerkoyen/CssToInlineStyles",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tijsverkoyen/CssToInlineStyles",
-                "reference": "1.2.1"
+                "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
+                "reference": "e53f25f6685d167f80b9d51b91b09aa70ea6c1c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/1.2.1",
-                "reference": "1.2.1",
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/e53f25f6685d167f80b9d51b91b09aa70ea6c1c9",
+                "reference": "e53f25f6685d167f80b9d51b91b09aa70ea6c1c9",
                 "shasum": ""
             },
             "require": {
@@ -975,6 +976,53 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2013-02-09 17:48:44"
+        },
+        {
+            "name": "woutersioen/sir-trevor-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WouterSioen/sir-trevor-php.git",
+                "reference": "dc41a80020f9c3f52903da0549ee96d108a9274d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WouterSioen/sir-trevor-php/zipball/dc41a80020f9c3f52903da0549ee96d108a9274d",
+                "reference": "dc41a80020f9c3f52903da0549ee96d108a9274d",
+                "shasum": ""
+            },
+            "require": {
+                "michelf/php-markdown": "1.3.*@dev",
+                "nickcernis/html-to-markdown": "2.1.*@dev",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Converter.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wouter Sioen",
+                    "email": "info@woutersioen.be",
+                    "homepage": "http://woutersioen.be"
+                }
+            ],
+            "description": "A Sir Trevor to HTML conversion helper for PHP",
+            "homepage": "https://github.com/woutersioen/sir-trevor-php",
+            "keywords": [
+                "Sir Trevor",
+                "html"
+            ],
+            "time": "2013-11-03 11:22:16"
         }
     ],
     "packages-dev": [
@@ -985,8 +1033,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "michelf/php-markdown": 20,
-        "nickcernis/html-to-markdown": 20
+        "woutersioen/sir-trevor-php": 20
     },
     "platform": {
         "php": ">=5.3.2"
