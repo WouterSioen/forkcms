@@ -823,9 +823,10 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 	/**
 	 * Retrieve the value converted to html
 	 *
+	 * @param boolean[optional] $allowHTML (just added to be compatible with parent)
 	 * @return string
 	 */
-	public function getHTML()
+	public function getValue($allowHTML = null)
 	{
 		$value = $this->value;
 
@@ -853,83 +854,13 @@ class BackendFormSirTrevor extends SpoonFormTextarea
 	 * Set the value of Sir Trevor.
 	 *
 	 * @param string $value
-	 * @todo Fix inline styles (waiting on a pull request https://github.com/nickcernis/html-to-markdown/pull/8)
 	 */
 	private function setValue($value)
 	{
 		// convert the html to json
 		$data = array();
 
-		$doc = new DOMDocument();
-		$doc->loadHTML($value);
-
-		// go into the first element of nodeType 1. This is the first element
-		// after the doctype declaration, so the html tag
-		foreach($doc->childNodes as $wrapperNode)
-		{
-			if($wrapperNode->nodeType == 1)
-			{
-				// we're in he html, let's get into the body tag
-				foreach($wrapperNode->childNodes as $bodyNode)
-				{
-					if($bodyNode->nodeName == 'body')
-					{
-						// and now, we can loop our nodes, eventually. Let's convert
-						foreach($bodyNode->childNodes as $node)
-						{
-							switch($node->nodeName)
-							{
-								case 'p':
-									$html = $node->ownerDocument->saveXML($node);
-									$markdown = new HTML_To_Markdown($html);
-									$markdown = $markdown->output();
-									$data[] = array(
-										'type' => 'text',
-										'data' => array(
-											'text' => $markdown
-										)
-									);
-									break;
-								case 'h2':
-									$html = $node->ownerDocument->saveXML($node);
-
-									// remove the outer h2 tags
-									$html = preg_replace('/<(\/|)h2>/i', '', $html);
-									$markdown = new HTML_To_Markdown($html);
-									$markdown = ' ' . $markdown->output();
-
-									$data[] = array(
-										'type' => 'heading',
-										'data' => array(
-											'text' => $markdown
-										)
-									);
-									break;
-								case 'ul':
-									$html = $node->ownerDocument->saveXML($node);
-									$markdown = new HTML_To_Markdown($html);
-									$markdown = $markdown->output();
-
-									// we need a space in the beginnen of each line
-									$markdown = ' ' . str_replace("\n", "\n ", $markdown);
-
-									$data[] = array(
-										'type' => 'list',
-										'data' => array(
-											'text' => $markdown
-										)
-									);
-									break;
-								default:
-									break;
-							}
-						}
-					}
-					
-				}
-			}
-		}
-
-		$this->value = json_encode(array('data' => $data));
+		$converter = new Converter();
+		$this->value = $converter->toJson($value);
 	}
 }
