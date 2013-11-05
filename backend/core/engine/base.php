@@ -694,12 +694,10 @@ class BackendBaseConfig extends BackendBaseObject
 	 */
 	public function setPossibleActions()
 	{
-		$path = BACKEND_MODULES_PATH . '/' . $this->getModule();
-
-		if(is_dir($path . '/actions'))
+		if(is_dir(BACKEND_MODULE_PATH . '/actions'))
 		{
 			$finder = new Finder();
-			foreach($finder->files()->name('*.php')->in($path . '/actions') as $file)
+			foreach($finder->files()->name('*.php')->in(BACKEND_MODULE_PATH . '/actions') as $file)
 			{
 				$action = strtolower(str_replace('.php', '', $file->getBasename()));
 
@@ -708,10 +706,10 @@ class BackendBaseConfig extends BackendBaseObject
 			}
 		}
 
-		if(is_dir($path . '/ajax'))
+		if(is_dir(BACKEND_MODULE_PATH . '/ajax'))
 		{
 			$finder = new Finder();
-			foreach($finder->files()->name('*.php')->in($path . '/ajax') as $file)
+			foreach($finder->files()->name('*.php')->in(BACKEND_MODULE_PATH . '/ajax') as $file)
 			{
 				$action = strtolower(str_replace('.php', '', $file->getBasename()));
 

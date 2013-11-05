@@ -983,12 +983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WouterSioen/sir-trevor-php.git",
-                "reference": "855f3d9733f1cab1bc7cf62fc7ce1e923f03968a"
+                "reference": "592afcb1ea19dbbb4b411d5073ea7259591ca45d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WouterSioen/sir-trevor-php/zipball/855f3d9733f1cab1bc7cf62fc7ce1e923f03968a",
-                "reference": "855f3d9733f1cab1bc7cf62fc7ce1e923f03968a",
+                "url": "https://api.github.com/repos/WouterSioen/sir-trevor-php/zipball/592afcb1ea19dbbb4b411d5073ea7259591ca45d",
+                "reference": "592afcb1ea19dbbb4b411d5073ea7259591ca45d",
                 "shasum": ""
             },
             "require": {
@@ -1022,7 +1022,7 @@
                 "Sir Trevor",
                 "html"
             ],
-            "time": "2013-11-04 12:28:34"
+            "time": "2013-11-05 07:00:38"
         }
     ],
     "packages-dev": [

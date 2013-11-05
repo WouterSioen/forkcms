@@ -2099,6 +2099,9 @@ jsBackend.sirTrevor =
 		if(typeof SirTrevor != 'undefined')
 		{
 			new SirTrevor.Editor({ el: $('.inputSirTrevor') });
+			SirTrevor.setDefaults({
+				uploadUrl: '/private/' + jsBackend.current.language + '/core/upload'
+			});
 		}
 	}
 }
