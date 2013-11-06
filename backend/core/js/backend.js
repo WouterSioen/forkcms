@@ -2098,12 +2098,14 @@ jsBackend.sirTrevor =
 	{
 		if(typeof SirTrevor != 'undefined')
 		{
-			new SirTrevor.Editor({
-				el: $('.inputSirTrevor'),
-				blockTypes: ['Heading', 'Text', 'List', 'Image', 'Quote', 'Embedly']
-			});
-			SirTrevor.setDefaults({
-				uploadUrl: '/private/' + jsBackend.current.language + '/core/upload'
+			$('.inputSirTrevor').each(function(i, item){
+				new SirTrevor.Editor({
+					el: $(this),
+					blockTypes: ['Heading', 'Text', 'List', 'Image', 'Quote', 'Embedly']
+				});
+				SirTrevor.setDefaults({
+					uploadUrl: '/private/' + jsBackend.current.language + '/core/upload'
+				});
 			});
 		}
 	}

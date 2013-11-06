@@ -74,7 +74,12 @@ class BackendSettingsIndex extends BackendBaseActionIndex
 		$this->frm->addText('facebook_application_id', BackendModel::getModuleSetting('core', 'facebook_app_id', null));
 		$this->frm->addText('facebook_application_secret', BackendModel::getModuleSetting('core', 'facebook_app_secret', null));
 
-		// ckfinder
+		// editor settings
+		$editors = array(
+			'ckeditor' => 'CKEditor',
+			'sir-trevor' => 'Sir Trevor'
+		);
+		$this->frm->addDropdown('editor', $editors, BackendModel::getModuleSetting('core', 'editor', 'CKEditor'));
 		$this->frm->addText('ckfinder_license_name', BackendModel::getModuleSetting('core', 'ckfinder_license_name', null));
 		$this->frm->addText('ckfinder_license_key', BackendModel::getModuleSetting('core', 'ckfinder_license_key', null));
 		$this->frm->addText('ckfinder_image_max_width', BackendModel::getModuleSetting('core', 'ckfinder_image_max_width', 1600));
@@ -145,6 +150,9 @@ class BackendSettingsIndex extends BackendBaseActionIndex
 		// show options
 		if($this->needsAkismet) $this->tpl->assign('needsAkismet', true);
 		if($this->needsGoogleMaps) $this->tpl->assign('needsGoogleMaps', true);
+
+		// is the logged in user a god user?
+		$this->tpl->assign('isGod', BackendAuthentication::getUser()->isGod());
 
 		// parse the form
 		$this->frm->parse($this->tpl);
@@ -238,7 +246,8 @@ class BackendSettingsIndex extends BackendBaseActionIndex
 				BackendModel::setModuleSetting('core', 'facebook_app_id', ($this->frm->getField('facebook_application_id')->isFilled()) ? $this->frm->getField('facebook_application_id')->getValue() : null);
 				BackendModel::setModuleSetting('core', 'facebook_app_secret', ($this->frm->getField('facebook_application_secret')->isFilled()) ? $this->frm->getField('facebook_application_secret')->getValue() : null);
 
-				// ckfinder settings
+				// editor settings
+				BackendModel::setModuleSetting('core', 'editor', $this->frm->getField('editor')->getValue());
 				BackendModel::setModuleSetting('core', 'ckfinder_license_name', ($this->frm->getField('ckfinder_license_name')->isFilled()) ? $this->frm->getField('ckfinder_license_name')->getValue() : null);
 				BackendModel::setModuleSetting('core', 'ckfinder_license_key', ($this->frm->getField('ckfinder_license_key')->isFilled()) ? $this->frm->getField('ckfinder_license_key')->getValue() : null);
 				BackendModel::setModuleSetting('core', 'ckfinder_image_max_width', ($this->frm->getField('ckfinder_image_max_width')->isFilled()) ? $this->frm->getField('ckfinder_image_max_width')->getValue() : 1600);

@@ -152,6 +152,19 @@
 		</div>
 	</div>
 
+	{option:isGod}
+		<div class="box horizontal">
+			<div class="heading">
+				<h3><label for="editor">{$lblEditor|ucfirst}</label></h3>
+			</div>
+			<div class="options labelWidthLong">
+				<p>
+					{$ddmEditor} {$ddmEditorError}
+				</p>
+			</div>
+		</div>
+	{/option:isGod}
+
 	<div class="box horizontal">
 		<div class="heading">
 			<h3>CKFinder</h3>

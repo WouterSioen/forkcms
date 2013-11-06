@@ -230,6 +230,13 @@ class BackendForm extends SpoonForm
 	 */
 	public function addEditor($name, $value = null, $class = null, $classError = null, $HTML = true)
 	{
+		$editorType = BackendModel::getModuleSetting('core', 'editor', 'CKEditor');
+
+		if($editorType == 'sir-trevor')
+		{
+			return $this->addSirTrevor($name, $value = null, $class = null, $classError = null, $HTML = true);
+		}
+
 		$name = (string) $name;
 		$value = ($value !== null) ? (string) $value : null;
 		$class = 'inputEditor ' . (string) $class;
