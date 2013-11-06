@@ -10,6 +10,7 @@
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * This is the upload-action, it will upload send images
@@ -45,8 +46,9 @@ class BackendCoreUpload extends BackendBaseAction
 		}
 
 		// upload the image
-		$uploadedFile->move($path . '/' . $fileName . '.' . $extension);
+		$uploadedFile->move($path, $fileName . '.' . $extension);
 
-		$this->output(self::OK, $url . '/' . $fileName . '.' . $extension);
+		// return an empty response. Everything went fine
+		return;
 	}
 }
