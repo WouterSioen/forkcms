@@ -49,6 +49,15 @@ class BackendCoreUpload extends BackendBaseAction
 		$uploadedFile->move($path, $fileName . '.' . $extension);
 
 		// return an empty response. Everything went fine
-		return;
+		$response = new Response(
+			json_encode(array('file' => array(
+				'url' => $url . '/' . $fileName . '.' . $extension,
+				'filename' => $fileName . '.' . $extension
+			))),
+			200,
+			array('Content-Type' => 'application/json')
+		);
+		$response->send();
+		exit;
 	}
 }
