@@ -234,7 +234,7 @@ class BackendForm extends SpoonForm
 
 		if($editorType == 'sir-trevor')
 		{
-			return $this->addSirTrevor($name, $value = null, $class = null, $classError = null, $HTML = true);
+			return $this->addSirTrevor($name, $value, $class, $classError, $HTML);
 		}
 
 		$name = (string) $name;
