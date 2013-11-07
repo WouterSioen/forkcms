@@ -2113,19 +2113,18 @@ jsBackend.sirTrevor =
 					iconName: "link",
 					cmd: "CreateLink",
 					text: "link",
+					selection: null,
 
 					onClick: function()
 					{
-						var link = jsBackend.sirTrevor.links.get();
+						jsBackend.sirTrevor.links.get();
 
-						if(link && link.length > 0)
-						{
-							if (!link_regex.test(link))
-							{
-								link = "http://" + link;
-							}
-							document.execCommand(this.cmd, false, link);
-						}
+						var self = this;
+
+						$(document).on('link_selected', function(e, link){
+							restoreSelection(self.selection);
+							document.execCommand(self.cmd, false, link);
+						});
 					},
 
 					isActive: function()
@@ -2137,6 +2136,9 @@ jsBackend.sirTrevor =
 						{
 							node = selection.getRangeAt(0).startContainer.parentNode;
 						}
+
+						this.selection = saveSelection();
+
 						return(node && node.nodeName == "A");
 					}
 				});
@@ -2153,27 +2155,73 @@ jsBackend.sirTrevor =
 		{
 			var dialog = $('<div id="linkDialog" title="' + jsBackend.locale.msg('ChooseALink') + '"/>');
 
-			// create a form with a dropdown
+			// create a form with a dropdown with all links
 			var ddm = $('<select/>').attr('id', 'linkList');
 			$.each(linkList, function(i, item)
 			{
-				ddm.append('<option>' + item[0] + '</option>')
-					.attr('value', item[1]);
+				ddm.append(
+					$('<option>' + item[0] + '</option>')
+					.attr('value', item[1])
+				);
 			});
 
+			// put the ddm in a paragraph
+			var ddm = $('<p/>').append(ddm);
+
+			// append the data to the DOM
 			dialog.append(ddm);
 			$('body').append(dialog);
-
-			$('#linkDialog').dialog({
-				draggable: false,
-				resizable: false,
-				modal: true
-			});
 		},
 
 		get: function()
 		{
 			jsBackend.sirTrevor.links.build();
+
+			// open it in a dialog
+			$('#linkDialog').dialog({
+				draggable: false,
+				resizable: false,
+				modal: true,
+				buttons: {
+					'OK': function() {
+						var link = $('#linkList').val();
+						$(this).dialog('close');
+						$('#linkDialog').remove();
+
+						$(document).trigger('link_selected', link);
+					}
+				}
+			});
+		}
+	}
+}
+
+function saveSelection() {
+	if (window.getSelection) {
+		sel = window.getSelection();
+		if (sel.getRangeAt && sel.rangeCount) {
+			var ranges = [];
+			for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+				ranges.push(sel.getRangeAt(i));
+			}
+			return ranges;
+		}
+	} else if (document.selection && document.selection.createRange) {
+		return document.selection.createRange();
+	}
+	return null;
+}
+
+function restoreSelection(savedSel) {
+	if (savedSel) {
+		if (window.getSelection) {
+			sel = window.getSelection();
+			sel.removeAllRanges();
+			for (var i = 0, len = savedSel.length; i < len; ++i) {
+				sel.addRange(savedSel[i]);
+			}
+		} else if (document.selection && savedSel.select) {
+			savedSel.select();
 		}
 	}
 }
