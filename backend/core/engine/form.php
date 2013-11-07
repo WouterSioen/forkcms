@@ -393,11 +393,11 @@ class BackendForm extends SpoonForm
 		$this->header->addCSS('sir_trevor/sir-trevor-icons.css', 'core', false);
 
 		// add the internal link lists-file
-		/*if(is_file(FRONTEND_CACHE_PATH . '/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js'))
+		if(is_file(FRONTEND_CACHE_PATH . '/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js'))
 		{
 			$timestamp = @filemtime(FRONTEND_CACHE_PATH . '/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js');
 			$this->header->addJS('/frontend/cache/navigation/editor_link_list_' . BL::getWorkingLanguage() . '.js?m=' . $timestamp, null, false, true, false);
-		}*/
+		}
 
 		// create and return a textarea for the editor
 		return $this->add(new BackendFormSirTrevor($name, $value, $class, $classError, $HTML));

@@ -2106,7 +2106,74 @@ jsBackend.sirTrevor =
 				SirTrevor.setDefaults({
 					uploadUrl: '/private/' + jsBackend.current.language + '/core/upload'
 				});
+
+				// Overwrite the default link system with our custom system
+				var link = SirTrevor.Formatter.extend({
+					title: "link",
+					iconName: "link",
+					cmd: "CreateLink",
+					text: "link",
+
+					onClick: function()
+					{
+						var link = jsBackend.sirTrevor.links.get();
+
+						if(link && link.length > 0)
+						{
+							if (!link_regex.test(link))
+							{
+								link = "http://" + link;
+							}
+							document.execCommand(this.cmd, false, link);
+						}
+					},
+
+					isActive: function()
+					{
+						var selection = window.getSelection(),
+							node;
+
+						if(selection.rangeCount > 0)
+						{
+							node = selection.getRangeAt(0).startContainer.parentNode;
+						}
+						return(node && node.nodeName == "A");
+					}
+				});
+
+				// overwrite the sir trevor default link system
+				SirTrevor.Formatters.Link = new link();
 			});
+		}
+	},
+
+	links:
+	{
+		build: function()
+		{
+			var dialog = $('<div id="linkDialog" title="' + jsBackend.locale.msg('ChooseALink') + '"/>');
+
+			// create a form with a dropdown
+			var ddm = $('<select/>').attr('id', 'linkList');
+			$.each(linkList, function(i, item)
+			{
+				ddm.append('<option>' + item[0] + '</option>')
+					.attr('value', item[1]);
+			});
+
+			dialog.append(ddm);
+			$('body').append(dialog);
+
+			$('#linkDialog').dialog({
+				draggable: false,
+				resizable: false,
+				modal: true
+			});
+		},
+
+		get: function()
+		{
+			jsBackend.sirTrevor.links.build();
 		}
 	}
 }
