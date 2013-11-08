@@ -2118,7 +2118,6 @@ jsBackend.sirTrevor =
 					onClick: function()
 					{
 						jsBackend.sirTrevor.links.get();
-
 						var self = this;
 
 						$(document).on('link_selected', function(e, link){
@@ -2165,10 +2164,15 @@ jsBackend.sirTrevor =
 				);
 			});
 
-			// put the ddm in a paragraph
+			// create a text input for the link
+			var txt = $('<div contenteditable=true id="linkText" width="275px" class="inputText"/>');
+
+			// put the txt and the ddm in a paragraph
 			var ddm = $('<p/>').append(ddm);
+			var txt = $('<p/>').append(txt);
 
 			// append the data to the DOM
+			dialog.append(txt);
 			dialog.append(ddm);
 			$('body').append(dialog);
 		},
@@ -2177,6 +2181,10 @@ jsBackend.sirTrevor =
 		{
 			jsBackend.sirTrevor.links.build();
 
+			$('#linkList').on('change', function(e){
+				$('#linkText').text($(this).val());
+			});
+
 			// open it in a dialog
 			$('#linkDialog').dialog({
 				draggable: false,
@@ -2184,7 +2192,7 @@ jsBackend.sirTrevor =
 				modal: true,
 				buttons: {
 					'OK': function() {
-						var link = $('#linkList').val();
+						var link = $('#linkText').text();
 						$(this).dialog('close');
 						$('#linkDialog').remove();
 
@@ -2196,34 +2204,28 @@ jsBackend.sirTrevor =
 	}
 }
 
-function saveSelection() {
-	if (window.getSelection) {
-		sel = window.getSelection();
-		if (sel.getRangeAt && sel.rangeCount) {
-			var ranges = [];
-			for (var i = 0, len = sel.rangeCount; i < len; ++i) {
-				ranges.push(sel.getRangeAt(i));
-			}
-			return ranges;
-		}
-	} else if (document.selection && document.selection.createRange) {
-		return document.selection.createRange();
-	}
-	return null;
+function saveSelection(){
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            return sel.getRangeAt(0);
+        }
+    } else if (document.selection && document.selection.createRange) {
+        return document.selection.createRange();
+    }
+    return null;
 }
 
-function restoreSelection(savedSel) {
-	if (savedSel) {
-		if (window.getSelection) {
-			sel = window.getSelection();
-			sel.removeAllRanges();
-			for (var i = 0, len = savedSel.length; i < len; ++i) {
-				sel.addRange(savedSel[i]);
-			}
-		} else if (document.selection && savedSel.select) {
-			savedSel.select();
-		}
-	}
+function restoreSelection(range) {
+    if (range) {
+        if (window.getSelection) {
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (document.selection && range.select) {
+            range.select();
+        }
+    }
 }
 
 $(jsBackend.init);
