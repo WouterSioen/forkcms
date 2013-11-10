@@ -1,0 +1,63 @@
+.st-block__ui,
+.st-block__ui-delete-controls {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	opacity: 0;
+}
+
+.st-block__inner:hover .st-block__ui {
+	opacity: 1;
+}
+
+.st-block-ui-btn {
+	display: block;
+	float: left;
+	height: 1.7em;
+	width: 1.7em;
+	line-height: 1.7em;
+	font-size: 1.2em;
+	color: lighten($text-block-font-color,50);
+	text-align: center;
+	background: #fff;
+	border: 0;
+
+	cursor: pointer;
+}
+
+.st-block--with-errors .st-block-ui-btn ,
+.st-block--delete-active .st-block-ui-btn {
+	color: $error-color;
+	border-color: $error-color;
+}
+
+.st-block-ui-btn:hover {
+	color: $text-block-font-color;
+	background: #fff;
+}
+
+.st-block--with-errors .st-block-ui-btn:hover,
+.st-block--delete-active .st-block-ui-btn:hover {
+	background-color: $error-color;
+}
+
+.st-block--delete-active .st-block__ui-delete-controls {
+	opacity: 1;
+	z-index: 2;
+}
+
+.st-block__delete-label {
+	display: block;
+	text-align: center;
+	background: #fff;
+	color: $error-color !important; // Fix this to remove the important!
+	padding: 0.4em 0;
+}
+
+.st-block-ui-btn--confirm-delete,
+.st-block-ui-btn--deny-delete {
+	&:hover,
+	&:focus {
+		color: #fff;
+	}
+}

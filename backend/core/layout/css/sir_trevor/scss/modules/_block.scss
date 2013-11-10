@@ -1,0 +1,204 @@
+.st-block {
+	padding:0;
+	position: relative;
+}
+
+.st-block__inner {
+	position: relative;
+	border: 2px solid #fff;
+}
+
+.st-block__inner:hover {
+	box-shadow: inset 0 0 14px lighten($text-block-font-color, 65);
+	border: 2px solid lighten($text-block-font-color, 60);
+}
+
+.st-block--with-errors .st-block__inner,
+.st-block--delete-active .st-block__inner  {
+	border-color: $error-color;
+}
+
+.st-block--with-plus:after,
+.st-icon--add:after {
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+
+.st--block-limit-reached .st-block--with-plus:after,
+.st--block-limit-reached .st-icon--add:after {
+	display: none;
+}
+
+.st-icon--add:after {
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-size: 1.3em;
+	padding: 0.5em 0;
+	line-height: 1;
+
+	background: $light-ui-color;
+}
+
+.st-block--with-plus:after {
+	cursor: pointer;
+
+	color: $beta-accent-color;
+	background: $blocks-control-bg-color;
+}
+
+.with-st-controls:after,
+.with-st-controls:before {
+	display:none
+}
+
+.st-outer--is-reordering .st-block.st-drag-over:after,
+.st-outer--is-reordering .st-block.st-drag-over:last-child:after,
+.st-outer--is-reordering .st-block-controls__top.st-drag-over:before {
+	font-family:inherit;
+	content: "Drop block here";
+	text-align: center;
+	padding: 0.7em 0;
+	font-size: 1.125em;
+	font-weight: 700;
+	border: 2px dashed #d4d4d4;
+	background: transparent;
+	color: #d4d4d4;
+}
+
+.st-text-block {
+	font-size: $text-block-font-size;
+	line-height: 1.45;
+
+	padding: $inner-block-padding;
+
+	li:before {
+		content: "•";
+		font-size: 0.9em;
+		padding-right: 7px;
+	}
+}
+
+.st-text-block--heading {
+	line-height: 1.1;
+	font-size: 2.2em;
+	min-height: auto;
+	font-weight: 700;
+}
+
+.st-block__inputs {
+	padding: 1.6em 0 1em;
+	border-radius: 0.2em;
+	background: $blocks-control-bg-color;
+	border-top: 0.125em solid transparent;
+}
+
+.st-block__dropzone .st-icon {
+	font-size: 4em;
+	color: $base-ui-color;
+	display: block;
+	text-align: center;
+	margin: 0 auto 0.2em;
+}
+
+.st-block__dropzone p {
+	text-align: center;
+	color: $base-ui-color;
+	font-size: 1.2em;
+	margin: 0;
+}
+
+.st-block__dropzone p span {
+	font-weight: 700;
+}
+
+.st-drag-over .st-block__inputs {
+	border-top-color: darken($blocks-control-bg-color, 15%);
+}
+
+.st-block .st-block__paste-input[type="text"] {
+	text-align: center;
+	width: 80%;
+	display: block;
+	margin: 0.4em auto 0;
+}
+
+.st-upload-btn {
+	border: 0;
+	background: $base-ui-color;
+	border-radius: 0.2em;
+	padding: 0.35em 1em;
+	font-family: $base-font-family;
+	font-size: 1.125em;
+	cursor: pointer;
+	color: #fff;
+	position: relative;
+	z-index: 10;
+}
+
+.st-block__upload-container:hover .st-upload-btn {
+	background:$accent-color;
+}
+
+.st-block__editor--with-sixteen-by-nine-media {
+	padding-top: 56.25%; /* 16:9 */
+	height: 0;
+	position: relative;
+	width: 100%;
+}
+
+.st-block__editor--with-sixteen-by-nine-media video,
+.st-block__editor--with-sixteen-by-nine-media iframe {
+	height: 100%; width: 100%;
+	left: 0; top: 0;
+	position: absolute;
+}
+
+.st-block__editor img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.st-block__upload-container {
+	margin: 0.4em 0 0 0;
+	text-align: center;
+}
+
+.st-block__upload-container input[type="file"] {
+	position: absolute;
+	z-index: 50;
+	opacity: 0;
+	cursor: pointer;
+	left: 0;
+	width: 100%;
+	padding: 7px 0;
+	text-align: center;
+}
+
+.st-block__messages {
+	display: none;
+	position: relative;
+	top: -1.9em; left: -1.9em;
+	padding: .3em .5em;
+	border: 2px solid $accent-color;
+	border-left: none; border-top: none;
+	max-width: 80%;
+}
+
+.st-block__messages--is-visible {
+	display: block;
+}
+
+.st-block--with-errors .st-block__messages {
+	border-color: $error-color;
+}
+
+.st-block__messages span {
+	display: block;
+}
+
+.st-msg--error {
+	color: $error-color;
+}

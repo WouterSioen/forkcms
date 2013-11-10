@@ -1,0 +1,56 @@
+// Block Control
+
+.st--block-limit-reached .st-block-controls__top {
+	display: none;
+}
+
+.st-block-controls__top {
+	color: $text-block-font-color;
+	background: $light-ui-color;
+
+	&:hover,
+	&:focus {
+		color: $beta-accent-color;
+		background: $blocks-control-bg-color;
+	}
+}
+
+	.st-block-controls__top:before {
+		width: 100%;
+		display: block;
+		text-align: center;
+		font-size: 1.3em;
+		padding: 0.5em 0;
+		line-height: 1;
+	}
+
+.st-block-controls {
+	background-color: $blocks-control-bg-color;
+	display: none;
+	border-radius: 0.2em;
+	color: $base-ui-color;
+	width: 100%;
+	text-align: center;
+	padding: 1em 0;
+}
+
+	.st-block-controls--active {
+		display:block;
+	}
+
+.st-block-control {
+	font-size: 1em;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 0.7em 0;
+
+	&:hover,
+	&:focus {
+		color: $beta-accent-color;
+	}
+}
+
+.st-block-control .st-icon {
+	font-size: 2em;
+	display: block;
+}
