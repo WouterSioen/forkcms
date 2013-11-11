@@ -2152,7 +2152,7 @@ jsBackend.sirTrevor =
 	{
 		build: function()
 		{
-			var dialog = $('<div id="linkDialog" title="' + jsBackend.locale.msg('ChooseALink') + '"/>');
+			var dialog = $('<div id="linkDialog" title="' + jsBackend.locale.lbl('Link') + '"/>');
 
 			// create a form with a dropdown with all links
 			var ddm = $('<select/>').attr('id', 'linkList');
@@ -2163,13 +2163,15 @@ jsBackend.sirTrevor =
 					.attr('value', item[1])
 				);
 			});
+			var ddmLabel = $('<label for="linkList">' + jsBackend.locale.msg('EditorSelectInternalPage') + '</label>');
 
 			// create a text input for the link
 			var txt = $('<div contenteditable=true id="linkText" width="275px" class="inputText"/>');
+			var txtLabel = $('<label for="linkText">' + jsBackend.locale.lbl('URL') + '</label>');
 
 			// put the txt and the ddm in a paragraph
-			var ddm = $('<p/>').append(ddm);
-			var txt = $('<p/>').append(txt);
+			var ddm = $('<p/>').append(ddmLabel, ddm);
+			var txt = $('<p/>').append(txtLabel, txt);
 
 			// append the data to the DOM
 			dialog.append(txt);
@@ -2205,27 +2207,35 @@ jsBackend.sirTrevor =
 }
 
 function saveSelection(){
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            return sel.getRangeAt(0);
-        }
-    } else if (document.selection && document.selection.createRange) {
-        return document.selection.createRange();
-    }
-    return null;
+	if(window.getSelection)
+	{
+		sel = window.getSelection();
+		if(sel.getRangeAt && sel.rangeCount)
+		{
+			return sel.getRangeAt(0);
+		}
+	}
+	else if(document.selection && document.selection.createRange)
+	{
+		return document.selection.createRange();
+	}
+	return null;
 }
 
 function restoreSelection(range) {
-    if (range) {
-        if (window.getSelection) {
-            sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(range);
-        } else if (document.selection && range.select) {
-            range.select();
-        }
-    }
+	if(range)
+	{
+		if(window.getSelection)
+		{
+			sel = window.getSelection();
+			sel.removeAllRanges();
+			sel.addRange(range);
+		}
+		else if(document.selection && range.select)
+		{
+			range.select();
+		}
+	}
 }
 
 $(jsBackend.init);

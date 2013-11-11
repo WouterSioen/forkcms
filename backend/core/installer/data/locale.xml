@@ -6237,6 +6237,11 @@
         <translation language="el"><![CDATA[τέλος γραμμής]]></translation>
         <translation language="zh"><![CDATA[行末]]></translation>
       </item>
+      <item type="label" name="Link">
+        <translation language="nl"><![CDATA[link]]></translation>
+        <translation language="en"><![CDATA[link]]></translation>
+        <translation language="fr"><![CDATA[ligne]]></translation>
+      </item>
       <item type="label" name="Loading">
         <translation language="nl"><![CDATA[loading]]></translation>
         <translation language="en"><![CDATA[loading]]></translation>
