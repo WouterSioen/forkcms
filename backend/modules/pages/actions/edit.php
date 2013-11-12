@@ -304,6 +304,9 @@ class BackendPagesEdit extends BackendBaseActionEdit
 			}
 		}
 
+		// check editor type
+		$editorType = BackendModel::getModuleSetting('core', 'editor', 'CKEditor');
+
 		// build blocks array
 		foreach($this->blocksContent as $i => $block)
 		{
@@ -311,6 +314,12 @@ class BackendPagesEdit extends BackendBaseActionEdit
 			$block['formElements']['chkVisible'] = $this->frm->addCheckbox('block_visible_' . $block['index'], $block['visible'] == 'Y');
 			$block['formElements']['hidExtraId'] = $this->frm->addHidden('block_extra_id_' . $block['index'], (int) $block['extra_id']);
 			$block['formElements']['hidPosition'] = $this->frm->addHidden('block_position_' . $block['index'], $block['position']);
+
+			if($editorType == 'sir-trevor')
+			{
+				$converter = new Converter();
+				$block['html'] = $converter->toJson($block['html']);
+			}
 			$block['formElements']['txtHTML'] = $this->frm->addTextArea('block_html_' . $block['index'], $block['html']); // this is no editor; we'll add the editor in JS
 
 			$this->positions[$block['position']]['blocks'][] = $block;

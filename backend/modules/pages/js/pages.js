@@ -245,8 +245,23 @@ jsBackend.pages.extras =
 			// Open dialog with CKEditor
 			open: function()
 			{
-				// set content in editor
-				CKEDITOR.instances['html'].setData(previousContent);
+				if(typeof CKEDITOR !== 'undefined')
+				{
+					// set content in editor
+					CKEDITOR.instances['html'].setData(previousContent);
+				}
+				else
+				{
+					// set the content of the textarea
+					$('#html').html(previousContent);
+
+					// destroy and re initialize sir trevor
+					$('#html').appendTo($('#html').closest('fieldset'));
+					$('#html').closest('fieldset').find('.st-outer').remove();
+
+					SirTrevor.instances = [];
+					jsBackend.sirTrevor.init();
+				}
 			}
 		});
 	},

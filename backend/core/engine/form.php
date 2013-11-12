@@ -386,7 +386,7 @@ class BackendForm extends SpoonForm
 		// we add JS because we need Sir trevor
 		$this->header->addJS('sir_trevor/underscore-min.js', 'core', false);
 		$this->header->addJS('sir_trevor/eventable.js', 'core', false);
-		$this->header->addJS('sir_trevor/sir-trevor.min.js', 'core', false);
+		$this->header->addJS('sir_trevor/sir-trevor-source.js', 'core', false);
 
 		// add needed css files
 		$this->header->addCSS('sir_trevor/sir-trevor.css', 'core', false);

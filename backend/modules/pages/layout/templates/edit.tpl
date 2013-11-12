@@ -412,22 +412,22 @@
 			<a href="#" id="saveAsDraft" class="inputButton button"><span>{$lblSaveDraft|ucfirst}</span></a>
 		</div>
 	</div>
-{/form:edit}
 
-<div class="box" id="blockHtml" style="display: none;">
-	<div class="blockContentHTML optionsRTE">
-		<fieldset>
-			<div class="generalMessage singleMessage infoMessage">
-				{$msgContentSaveWarning}
-			</div>
-			<div class="heading">
-				<h3>{$lblEditor|ucfirst}</h3>
-			</div>
-			{$txtHtml}
-			{$txtHtmlError}
-		</fieldset>
+	<div class="box" id="blockHtml" style="display: none;">
+		<div class="blockContentHTML optionsRTE">
+			<fieldset>
+				<div class="generalMessage singleMessage infoMessage">
+					{$msgContentSaveWarning}
+				</div>
+				<div class="heading">
+					<h3>{$lblEditor|ucfirst}</h3>
+				</div>
+				{$txtHtml}
+				{$txtHtmlError}
+			</fieldset>
+		</div>
 	</div>
-</div>
+{/form:edit}
 
 <script type="text/javascript">
 	//<![CDATA[
