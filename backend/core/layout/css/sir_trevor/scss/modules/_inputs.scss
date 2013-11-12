@@ -1,0 +1,53 @@
+// Reset all our input styles
+.st-input-label {
+	display: block;
+	margin-left: 21px;
+	margin-bottom: 0.3em;
+}
+
+.st-
+
+// Generic styles
+.st-text-block,
+.st-block textarea {
+	font-family: $base-font-family;
+	font-size: inherit;
+	margin: 0;
+	padding: 0.3em 0;
+}
+
+.st-block input[type="text"] {
+	border-radius: 3px;
+	margin-bottom: 28px;
+	margin-left: 18px;
+}
+
+.st-block blockquote {
+	font-size: 1.3em;
+}
+
+// Focus / Active styles
+.st-text-block,
+.st-text-block:active,
+.st-text-block:focus,
+.st-block [contenteditable="true"],
+.st-block [contenteditable="true"]:active,
+.st-block [contenteditable="true"]:focus,
+.st-block input[type="text"],
+.st-block input[type="text"]:active,
+.st-block input[type="text"]:focus,
+.st-block textarea,
+.st-block textarea:hover,
+.st-block textarea:active {
+	outline: none;
+	border: none;
+}
+
+.st-block input[type="text"],
+.st-block input[type="text"]:active,
+.st-block input[type="text"]:focus {
+	// width: 100%;
+	color: #42474b;
+	border: 0.1em solid #d4d4d4;
+	padding:.6em;
+}
