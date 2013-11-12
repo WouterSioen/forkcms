@@ -2120,7 +2120,7 @@ jsBackend.sirTrevor =
 						jsBackend.sirTrevor.links.get();
 						var self = this;
 
-						$(document).on('link_selected', function(e, link){
+						$(document).off().on('link_selected', function(e, link){
 							restoreSelection(self.selection);
 							document.execCommand(self.cmd, false, link);
 						});
