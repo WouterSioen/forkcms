@@ -52,10 +52,10 @@
   content: "binopen"; }
 
 .st-block__inner ::-moz-selection {
-  background: #e7f0f7;
+  background: #b6daf2;
   text-shadow: none; }
 .st-block__inner ::selection {
-  background: #e7f0f7;
+  background: #b6daf2;
   text-shadow: none; }
 
 .st-spinner {
@@ -280,7 +280,7 @@
   z-index: 10; }
 
 .st-block__upload-container:hover .st-upload-btn {
-  background: #e7f0f7; }
+  background: #b6daf2; }
 
 .st-block__editor--with-sixteen-by-nine-media {
   padding-top: 56.25%;
@@ -322,7 +322,7 @@
   top: -1.9em;
   left: -1.9em;
   padding: .3em .5em;
-  border: 2px solid #e7f0f7;
+  border: 2px solid #b6daf2;
   border-left: none;
   border-top: none;
   max-width: 80%; }
@@ -340,7 +340,7 @@
   color: red; }
 
 .st-block-positioner {
-  border: 0.125em solid #e7f0f7;
+  border: 0.125em solid #b6daf2;
   position: absolute;
   z-index: 2;
   left: -5.5em;
@@ -365,7 +365,7 @@
   right: -0.3em;
   bottom: 0.6em;
   z-index: 1;
-  border: 0.125em solid #e7f0f7;
+  border: 0.125em solid #b6daf2;
   background: #fff;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -374,12 +374,12 @@
   transform: rotate(45deg); }
 
 .st-block-positioner__title {
-  color: #e7f0f7;
+  color: #b6daf2;
   font-size: 0.7em;
   font-style: italic;
   font-weight: normal;
   margin: 0;
-  border-bottom: 1px solid #e7f0f7;
+  border-bottom: 1px solid #b6daf2;
   padding: 0.5em;
   text-align: center; }
 
@@ -488,7 +488,7 @@
 
 .st-format-btn:hover,
 .st-format-btn--is-active {
-  color: #e7f0f7; }
+  color: #b6daf2; }
 
 .st-format-btn--Italic {
   font-style: italic; }
