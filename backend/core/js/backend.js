@@ -2101,7 +2101,7 @@ jsBackend.sirTrevor =
 			$('.inputSirTrevor').each(function(i, item){
 				new SirTrevor.Editor({
 					el: $(this),
-					blockTypes: ['Heading', 'Text', 'List', 'Image', 'Quote', 'Embedly']
+					blockTypes: ['Heading', 'Text', 'List', 'Image', 'Quote', 'Video']
 				});
 				SirTrevor.setDefaults({
 					uploadUrl: '/private/' + jsBackend.current.language + '/core/upload'
