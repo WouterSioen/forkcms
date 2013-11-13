@@ -256,10 +256,8 @@ jsBackend.pages.extras =
 					$('#html').html(previousContent);
 
 					$.each(SirTrevor.instances, function(i, item){
-						item.destroy();
+						item.reinitialize();
 					});
-
-					jsBackend.sirTrevor.init();
 				}
 			}
 		});
