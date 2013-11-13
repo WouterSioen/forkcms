@@ -255,11 +255,10 @@ jsBackend.pages.extras =
 					// set the content of the textarea
 					$('#html').html(previousContent);
 
-					// destroy and re initialize sir trevor
-					$('#html').appendTo($('#html').closest('fieldset'));
-					$('#html').closest('fieldset').find('.st-outer').remove();
+					$.each(SirTrevor.instances, function(i, item){
+						item.destroy();
+					});
 
-					SirTrevor.instances = [];
 					jsBackend.sirTrevor.init();
 				}
 			}

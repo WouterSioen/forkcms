@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "bf99924386be074da30a8e9d6bbcb49d3333da12"
+                "reference": "v3.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/bf99924386be074da30a8e9d6bbcb49d3333da12",
-                "reference": "bf99924386be074da30a8e9d6bbcb49d3333da12",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/v3.2.2",
+                "reference": "v3.2.2",
                 "shasum": ""
             },
             "require": {
@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "1cd2718da4be06e487e526f8ea95f71e542a68cd"
+                "reference": "1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/1cd2718da4be06e487e526f8ea95f71e542a68cd",
-                "reference": "1cd2718da4be06e487e526f8ea95f71e542a68cd",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/1.1.2",
+                "reference": "1.1.2",
                 "shasum": ""
             },
             "require": {
@@ -85,7 +85,7 @@
             ],
             "description": "CSS & JS minifier",
             "homepage": "https://github.com/matthiasmullie/minify",
-            "time": "2013-04-22 08:19:35"
+            "time": "2013-04-22 08:16:03"
         },
         {
             "name": "michelf/php-markdown",
@@ -251,13 +251,13 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "url": "https://github.com/php-fig/log",
+                "reference": "1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://github.com/php-fig/log/archive/1.0.0.zip",
+                "reference": "1.0.0",
                 "shasum": ""
             },
             "type": "library",
@@ -290,12 +290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/forkcms/library.git",
-                "reference": "394a4392db9c93c2f49a8923982a6a6de7035688"
+                "reference": "1.3.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/forkcms/library/zipball/394a4392db9c93c2f49a8923982a6a6de7035688",
-                "reference": "394a4392db9c93c2f49a8923982a6a6de7035688",
+                "url": "https://api.github.com/repos/forkcms/library/zipball/1.3.10",
+                "reference": "1.3.10",
                 "shasum": ""
             },
             "require": {
@@ -801,23 +801,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBundle.git",
-                "reference": "03ed73bc11367b3156cc21f22ac37c7f70fcd10a"
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/03ed73bc11367b3156cc21f22ac37c7f70fcd10a",
-                "reference": "03ed73bc11367b3156cc21f22ac37c7f70fcd10a",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "~1.3",
+                "monolog/monolog": ">=1.3,<2.0",
                 "php": ">=5.3.2",
-                "symfony/config": "~2.2-beta2",
-                "symfony/dependency-injection": "~2.2-beta2",
-                "symfony/monolog-bridge": "~2.2-beta2"
+                "symfony/config": ">=2.2-beta2,<3.0",
+                "symfony/dependency-injection": ">=2.2-beta2,<3.0",
+                "symfony/monolog-bridge": ">=2.2-beta2,<3.0"
             },
             "require-dev": {
-                "symfony/yaml": "~2.2-beta2"
+                "symfony/yaml": ">=2.2-beta2,<3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -904,13 +904,13 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tijsverkoyen/Akismet.git",
-                "reference": "0c5185956e11824ed310d134d38d0b2c936f3d3a"
+                "url": "https://github.com/tijsverkoyen/Akismet",
+                "reference": "1.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/Akismet/zipball/0c5185956e11824ed310d134d38d0b2c936f3d3a",
-                "reference": "0c5185956e11824ed310d134d38d0b2c936f3d3a",
+                "url": "https://github.com/tijsverkoyen/Akismet/zipball/1.1.0",
+                "reference": "1.1.0",
                 "shasum": ""
             },
             "require": {
@@ -936,7 +936,7 @@
             ],
             "description": "Akismet is a wrapper-class to communicate with the Akismet API.",
             "homepage": "https://github.com/tijsverkoyen/Akismet",
-            "time": "2012-10-13 17:59:41"
+            "time": "2012-10-13 10:59:41"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -944,13 +944,13 @@
             "target-dir": "TijsVerkoyen/CssToInlineStyles",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-                "reference": "e53f25f6685d167f80b9d51b91b09aa70ea6c1c9"
+                "url": "https://github.com/tijsverkoyen/CssToInlineStyles",
+                "reference": "1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/e53f25f6685d167f80b9d51b91b09aa70ea6c1c9",
-                "reference": "e53f25f6685d167f80b9d51b91b09aa70ea6c1c9",
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/1.2.1",
+                "reference": "1.2.1",
                 "shasum": ""
             },
             "require": {
@@ -983,12 +983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WouterSioen/sir-trevor-php.git",
-                "reference": "24a65636b40dd9328d9fe2aaa1e6b26ac04a328d"
+                "reference": "cae5034d1e96549717289d6411c52ab3dbea58ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WouterSioen/sir-trevor-php/zipball/24a65636b40dd9328d9fe2aaa1e6b26ac04a328d",
-                "reference": "24a65636b40dd9328d9fe2aaa1e6b26ac04a328d",
+                "url": "https://api.github.com/repos/WouterSioen/sir-trevor-php/zipball/cae5034d1e96549717289d6411c52ab3dbea58ab",
+                "reference": "cae5034d1e96549717289d6411c52ab3dbea58ab",
                 "shasum": ""
             },
             "require": {
@@ -1022,7 +1022,7 @@
                 "Sir Trevor",
                 "html"
             ],
-            "time": "2013-11-06 19:20:19"
+            "time": "2013-11-12 20:21:43"
         }
     ],
     "packages-dev": [
