@@ -194,6 +194,7 @@ jsBackend.pages.extras =
 			resizable: false,
 			modal: true,
 			width: 940,
+			appendTo: 'form#edit',
 			title: utils.string.ucfirst(jsBackend.locale.lbl('Editor')),
 			position: 'center',
 			buttons:
@@ -202,6 +203,18 @@ jsBackend.pages.extras =
 					text: utils.string.ucfirst(jsBackend.locale.lbl('OK')),
 					click: function()
 					{
+						// save the content if necessary
+						if(typeof CKEDITOR == 'undefined')
+						{
+							$.each(SirTrevor.instances, function(i, item){
+								// save the data from Sir Trevor into the form field
+								item.store('reset');
+								item.validateBlocks(true);
+								item.validateBlockTypesExist(true);
+								item.store('save');
+							});
+						}
+
 						// grab the content
 						var content = $('#html').val();
 
