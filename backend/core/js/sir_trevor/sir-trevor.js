@@ -4,7 +4,7 @@
  * Released under the MIT license
  * www.opensource.org/licenses/MIT
  *
- * 2013-11-13
+ * 2013-11-20
  */
 
 (function ($, _){
@@ -64,7 +64,7 @@
     bound: [],
     _bindFunctions: function(){
       if (this.bound.length > 0) {
-        _.bindAll.apply(null, _.union(this, this.bound));
+        _.bindAll.apply(null, _.union([this], this.bound));
       }
     }
   };
@@ -2639,7 +2639,6 @@
   
         // Cleanup element
         var el = this.$el.detach();
-        this.$outer.remove();
   
         // Remove instance
         SirTrevor.instances = _.reject(SirTrevor.instances, _.bind(function(instance) {
@@ -2649,7 +2648,7 @@
         // Clear the store
         this.store("reset");
   
-        this.$form.append(el);
+        this.$outer.replaceWith(el);
       },
   
       reinitialize: function(options) {
